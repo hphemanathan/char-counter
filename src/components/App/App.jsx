@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import Header from '../Header/Header'
 import styles from "./App.module.css";
+import Header from '../Header/Header'
 import Heading from '../Heading/Heading';
 import TextInput from '../TextInput/TextInput';
+import FilterOptions from '../FilterOptions/FilterOptions';
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <Heading/>
           <TextInput/>
+          <FilterOptions/>
         </div>
       </div>
     </>
