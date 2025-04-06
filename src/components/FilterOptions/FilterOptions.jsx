@@ -3,9 +3,9 @@ import ExcludeCheckBox from '../ExcludeCheckBox/ExcludeCheckBox';
 import SetCharLimit from '../SetCharLimit/SetCharLimit';
 import ReadingTime from '../ReadingTime/ReadingTime';
 
-function FilterOptions() {
+function FilterOptions({...delegated}) {
   return <div>
-    <ExcludeCheckBox/>
+    <ExcludeCheckBox {...delegated}/>
     <SetCharLimit/>
     <ReadingTime/>
   </div>;

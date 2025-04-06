@@ -1,0 +1,22 @@
+.wrapper {
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 130px;
+}
+
+.totalChar {
+  background-color: var(--card-bg-purple);
+  background-image: url(src/assets/pattern-character-count.svg);
+  /* background-attachment: fixed; */
+}
+
+.wordCount {
+  background-color: var(--card-bg-yellow);
+  background-image: url(src/assets/pattern-word-count.svg);
+}
+
+.sentenceCount {
+  background-color: var(--card-bg-orange);
+  background-image: url(src/assets/pattern-sentence-count.svg);
+}

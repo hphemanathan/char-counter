@@ -1,5 +1,8 @@
 :root {
   --spacing: 8px;
+  --card-bg-purple: hsl(274, 90%, 80%);
+  --card-bg-yellow: hsl(37, 100%, 50%);
+  --card-bg-orange: hsl(15, 99%, 67%);
 }
 
 body {

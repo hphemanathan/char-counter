@@ -1,7 +1,7 @@
 import React from 'react';
 
-function ExcludeCheckBox() {
-  const [exclude, setExclude] = React.useState(false)
+function ExcludeCheckBox({exclude, setExclude}) {
+  
   const id  = React.useId()
   return (
     <div>
