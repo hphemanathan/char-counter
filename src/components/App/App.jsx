@@ -40,12 +40,12 @@ function App() {
     // },[chars, exclude] )
 
     React.useEffect (() => {
-      if (chars === "" || (charLimitCheck && chars.length > charLimit)) {
+      if (chars === "") {
         setCharCount("00");
         setWordCount("00");
         setSentenceCount("00");
       }
-    },[chars, charLimitCheck, charLimit])
+    },[chars])
 
 
 
