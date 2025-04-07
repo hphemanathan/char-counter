@@ -15,24 +15,55 @@ function App() {
       const [wordCount, setWordCount] = React.useState('')
       const [exclude, setExclude] = React.useState(false)
       const [sentenceCount, setSentenceCount] = React.useState("")
+      const [charLimitCheck, setCharLimitCheck] = React.useState(false);
+      const [charLimit, setCharLimit] = React.useState("");
+      
   
-    React.useEffect (() =>{
-      if (chars === '') {
-        setCharCount('00')
-        setWordCount('00')
-      }
+    // React.useEffect (() =>{
+    //   if (chars === 'test') {
+    //     console.log("success")
+    //     setWordCount('00')
+    //     setSentenceCount('00')
+    //   }
+    //   console.log(charCount);
 
-      if (exclude === true) {
-        console.log ("working")
-        const newCharcount = chars.replace(/\s/g, "");
-        setCharCount(newCharcount.length)
-      } else {
-        setCharCount(charsWSpace.length)
-      }
+    //   if (exclude === true) {
+    //     console.log ("working")
+    //     const newCharcount = chars.replace(/\s/g, "");
+    //     setCharCount(newCharcount.length)
+    //   } else {
+    //     setCharCount(charsWSpace.length)
+    //   }
       
 
 
-    },[chars, exclude] )
+    // },[chars, exclude] )
+
+    React.useEffect (() => {
+      if (chars === "" || (charLimitCheck && chars.length > charLimit)) {
+        setCharCount("00");
+        setWordCount("00");
+        setSentenceCount("00");
+      }
+    },[chars, charLimitCheck, charLimit])
+
+
+
+    React.useEffect (() => {
+ if (exclude === true && charsWSpace.length < 1) {
+  setCharCount("00");
+} else if (exclude === true) {
+  const newCharcount = chars.replace(/\s/g, "");
+  setCharCount(newCharcount.length);
+} else if (exclude === false && charsWSpace.length < 1) {
+  setCharCount("00");
+} else {
+  setCharCount(charsWSpace.length);
+} 
+
+}
+
+ ,[exclude, chars, charsWSpace])
 
   return (
     <>
@@ -49,15 +80,35 @@ function App() {
             setChars={setChars}
             charCount={charCount}
             setCharCount={setCharCount}
-            sentenceCount = {sentenceCount} setSentenceCount={setSentenceCount}
+            sentenceCount={sentenceCount}
+            setSentenceCount={setSentenceCount}
+            charLimit={charLimit}
+            setCharLimit={setCharLimit}
+            charLimitCheck={charLimitCheck}
+            setCharLimitCheck={setCharLimitCheck}
           />
-          <FilterOptions exclude={exclude} setExclude={setExclude} />
+          <FilterOptions
+            chars={chars}
+            setChars={setChars}
+            charCount={charCount}
+            setCharCount={setCharCount}
+            exclude={exclude}
+            setExclude={setExclude}
+            charLimit={charLimit}
+            setCharLimit={setCharLimit}
+            charLimitCheck={charLimitCheck}
+            setCharLimitCheck={setCharLimitCheck}
+          />
           <Results
             wordCount={wordCount}
             setWordCount={setWordCount}
             charCount={charCount}
             setCharCount={setCharCount}
-            exclude={exclude} setExclude = {setExclude}
+            exclude={exclude}
+            setExclude={setExclude}
+            sentenceCount={sentenceCount}
+            setSentenceCount={setSentenceCount}
+            chars
           />
           <LetterDensity />
         </div>

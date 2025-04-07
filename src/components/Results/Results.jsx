@@ -1,22 +1,28 @@
 import React from 'react';
 import Result from '../Result/Result';
 
-function Results({charCount, wordCount, exclude}) {
+function Results({chars, charCount, wordCount, exclude, sentenceCount}) {
+
+  // React.useEffect (() => {
+  //   if (chars === '1') {
+  //     console.log (chars)
+  //   }
+  // },[chars])
 
   
   return (
     <div>
       <Result type='totalChar'>
         <h2>{charCount}</h2>
-        <p>{exclude ? 'Total Characters (no space)' : "Total Characters" }</p>
+        <p>{exclude ? "Total Characters (no space)" : "Total Characters"}</p>
       </Result>
       <Result type='wordCount'>
         <h2>{wordCount}</h2>
         <p>Word Count</p>
       </Result>
       <Result type='sentenceCount'>
-        <h2>04</h2>
-        <p>Sentece Count</p>
+        <h2>{sentenceCount}</h2>
+        <p>Sentence Count</p>
       </Result>
     </div>
   );

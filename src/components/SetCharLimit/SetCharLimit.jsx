@@ -1,9 +1,15 @@
 import React from 'react';
 
-function SetCharLimit() {
-  const [charLimitCheck, setCharLimitCheck] = React.useState(false);
-  const [charLimit, setCharLimit] = React.useState('');
+function SetCharLimit({chars, charLimit, setCharLimit, charLimitCheck, setCharLimitCheck}) {
+  // const [charLimitCheck, setCharLimitCheck] = React.useState(false);
+  // const [charLimit, setCharLimit] = React.useState('');
     const id  = React.useId()
+
+    // React.useEffect (() => {
+    //   if (chars.length > charLimit ) {
+    //     console.log ("max character")
+    //   }
+    // })
   return (
     <div>
       <form onSubmit={(event) => event.preventDefault()}>

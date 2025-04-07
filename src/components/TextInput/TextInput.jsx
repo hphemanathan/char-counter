@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TextInput.module.css'
 
-function TextInput({setCharsWSpace, wordCount, setWordCount, charCount, setCharCount, chars, setChars, setSentenceCount }) {
+function TextInput({setCharsWSpace, setWordCount, setCharCount, chars, setChars, setSentenceCount, charLimit,  charLimitCheck }) {
   const id = React.useId();
   return (
     <div>
@@ -13,24 +13,24 @@ function TextInput({setCharsWSpace, wordCount, setWordCount, charCount, setCharC
           value={chars}
           onChange={(event) => {
             const newChars = event.target.value;
-                
-               setChars(newChars)
-               setCharsWSpace(newChars)
 
-               
+            setChars(newChars);
+            setCharsWSpace(newChars);
+
             const newWordCount = newChars
               .trim()
               .split(/\s+/)
               .filter((word) => word.length > 0);
-             setWordCount(newWordCount.length) 
+            setWordCount(newWordCount.length);
             setCharCount(newChars.length);
 
-            const newSentenceCount = newChars.split(/[.]/g).filter(Boolean).length;
-            console.log(newSentenceCount)
+            const newSentenceCount =
+              newChars.match(/[\w|\)][.?!](\s|$)/g).length;
+            setSentenceCount(newSentenceCount);
           }}
-
-     
         />
+        {(charLimitCheck && chars.length > charLimit) ?
+        <p>Limit reached! Your text exceeds {charLimit} characters.</p> : ''}
       </form>
     </div>
   );

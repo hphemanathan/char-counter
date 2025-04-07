@@ -6,7 +6,7 @@ import ReadingTime from '../ReadingTime/ReadingTime';
 function FilterOptions({...delegated}) {
   return <div>
     <ExcludeCheckBox {...delegated}/>
-    <SetCharLimit/>
+    <SetCharLimit {...delegated}/>
     <ReadingTime/>
   </div>;
 }
