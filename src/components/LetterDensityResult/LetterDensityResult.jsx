@@ -3,7 +3,17 @@ import React from 'react';
 function LetterDensityResult({chars}) {
   
   
-  const letterDensity = [chars].reduce(function(obj, letter) {
+  const letterDensityWOspace = chars.toLocaleUpperCase().replace(
+    /[^0-9A-Z]+/gi,
+    ""
+  );
+
+  // console.log(letterDensityWOspace)
+
+  const arrayOfchars = letterDensityWOspace.split('')
+  // console.log(arrayOfchars)
+  
+  const letterDensity = arrayOfchars.reduce(function(obj, letter) {
     if (!obj[letter]) {
       obj[letter] = 0;
     }

@@ -25,7 +25,7 @@ function TextInput({setCharsWSpace, setWordCount, charCount, setCharCount, chars
             setCharCount(newChars.length);
 
             const newSentenceCount =
-              newChars.match(/[\w|\)][.?!](\s|$)/g).length;
+              newChars.match(/[\w|)][.?!](\s|$)/g).length;
             setSentenceCount(newSentenceCount);
           }}
         />
