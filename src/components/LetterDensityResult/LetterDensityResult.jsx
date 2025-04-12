@@ -20,8 +20,28 @@ function LetterDensityResult({chars}) {
     obj[letter]++;
     return obj
   }, {})
-  console.log (letterDensity)
-  return <div><p>{chars}</p></div>;
+
+  // const letterDensityArr = Array.from(letterDensity)
+
+  // const letterDensityArr = Object.keys(letterDensity).map((key) => {{key : letterDensity[key]}})
+  // console.log(letterDensityArr)
+
+  const letterDensitySorted = Object.fromEntries(Object.entries(letterDensity).sort(([, a], [, b]) => b-a))
+
+  console.log(letterDensitySorted)
+
+// console.log(obj);
+
+  // console.log(letterDensity)
+  // console.log(obj)
+  
+//   const letterDensitySorted = letterDensity.sort((a, b) => a>b ? 1 : -1);
+// console.log(letterDensitySorted)
+
+  // return <div><p>{
+  //   letterDensitySorted.map((key) => {
+  //     console.log(key)
+  //   })}</p></div>;
 }
 
 export default LetterDensityResult;
