@@ -17,7 +17,7 @@ function App() {
       const [sentenceCount, setSentenceCount] = React.useState("")
       const [charLimitCheck, setCharLimitCheck] = React.useState(false);
       const [charLimit, setCharLimit] = React.useState("");
-      console.log(chars)
+      // console.log(chars)
   
     // React.useEffect (() =>{
     //   if (chars === 'test') {

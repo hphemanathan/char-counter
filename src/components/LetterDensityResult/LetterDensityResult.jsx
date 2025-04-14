@@ -10,8 +10,11 @@ function LetterDensityResult({chars}) {
 
   // console.log(letterDensityWOspace)
 
+  // console.log(letterDensityWOspace)
+
   const arrayOfchars = letterDensityWOspace.split('')
   // console.log(arrayOfchars)
+  // // console.log(arrayOfchars)
   
   const letterDensity = arrayOfchars.reduce(function(obj, letter) {
     if (!obj[letter]) {
@@ -21,7 +24,11 @@ function LetterDensityResult({chars}) {
     return obj
   }, {})
 
-  // const letterDensityArr = Array.from(letterDensity)
+  // console.log (letterDensity)
+
+  const letterDensityArr = Array.from(letterDensity)
+
+  // console.log (letterDensityArr)
 
   // const letterDensityArr = Object.keys(letterDensity).map((key) => {{key : letterDensity[key]}})
   // console.log(letterDensityArr)
@@ -30,18 +37,23 @@ function LetterDensityResult({chars}) {
 
   console.log(letterDensitySorted)
 
+
+
 // console.log(obj);
 
   // console.log(letterDensity)
   // console.log(obj)
   
-//   const letterDensitySorted = letterDensity.sort((a, b) => a>b ? 1 : -1);
-// console.log(letterDensitySorted)
+ const letterDensitySortedArr = Object.keys (letterDensitySorted).map((key) => [key, letterDensitySorted[key]])
+ console.log(letterDensitySortedArr)
 
-  // return <div><p>{
-  //   letterDensitySorted.map((key) => {
-  //     console.log(key)
-  //   })}</p></div>;
+  return <div>
+    {
+      letterDensitySortedArr.map((ltr) => 
+        <p>{ltr[0]}, {ltr[1]}</p>
+      )
+    }
+  </div>;
 }
 
 export default LetterDensityResult;
