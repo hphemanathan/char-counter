@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LetterDensityResult({chars}) {
+function LetterDensityResult({chars, charCount}) {
   
   
   const letterDensityWOspace = chars.toLocaleUpperCase().replace(
@@ -47,13 +47,20 @@ function LetterDensityResult({chars}) {
  const letterDensitySortedArr = Object.keys (letterDensitySorted).map((key) => [key, letterDensitySorted[key]])
  console.log(letterDensitySortedArr)
 
-  return <div>
-    {
-      letterDensitySortedArr.map((ltr) => 
-        <p>{ltr[0]}, {ltr[1]}</p>
-      )
-    }
-  </div>;
+  return (
+    <div>
+      {letterDensitySortedArr.map((ltr) => (
+        
+        <>
+        
+          <p>
+            {ltr[0]}, {ltr[1]}, ({ltr[1]/charCount * 100}%)
+          </p>
+    
+        </>
+      ))}
+    </div>
+  );
 }
 
 export default LetterDensityResult;

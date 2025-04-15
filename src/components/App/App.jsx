@@ -110,7 +110,7 @@ function App() {
             setSentenceCount={setSentenceCount}
             chars
           />
-          <LetterDensity  chars={chars}/>
+          <LetterDensity charCount={charCount} chars={chars} />
         </div>
       </div>
     </>
