@@ -7,6 +7,7 @@ function TextInput({setCharsWSpace, setWordCount, charCount, setCharCount, chars
     <div>
       <form action=''>
         <textarea
+          placeholder='Start typing here… (or paste your text)'
           className={styles.wrapper}
           name='character counter'
           id={id}
@@ -29,7 +30,7 @@ function TextInput({setCharsWSpace, setWordCount, charCount, setCharCount, chars
             setSentenceCount(newSentenceCount);
           }}
         />
-        {charLimitCheck && charCount > charLimit && charCount > 0 ? (
+        {charLimitCheck && charCount > charLimit > 0 && charCount > 0 ? (
           <p>Limit reached! Your text exceeds {charLimit} characters.</p>
         ) : (
           ""

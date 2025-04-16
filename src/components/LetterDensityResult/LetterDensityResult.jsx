@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LetterDensityResult({chars, charCount}) {
+function LetterDensityResult({chars, charCount, active, isActive}) {
   
   
   const letterDensityWOspace = chars.toLocaleUpperCase().replace(
@@ -49,16 +49,29 @@ function LetterDensityResult({chars, charCount}) {
 
   return (
     <div>
-      {letterDensitySortedArr.map((ltr) => (
-        
-        <>
-        
-          <p>
-            {ltr[0]}, {ltr[1]}, ({ltr[1]/charCount * 100}%)
-          </p>
-    
-        </>
-      ))}
+      {active
+        ? letterDensitySortedArr.map((ltr) => (
+            <div key={ltr[0]}>
+              <label htmlFor='char'>{ltr[0]}</label>
+              <progress id='char' value={(ltr[1] / charCount) * 100} max={100}>
+                {ltr[1]}
+              </progress>
+              <p>
+                {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
+              </p>
+            </div>
+          ))
+        : letterDensitySortedArr.slice(0, 5).map((ltr) => (
+            <>
+              <label htmlFor='char'>{ltr[0]}</label>
+              <progress id='char' value={(ltr[1] / charCount) * 100} max={100}>
+                {ltr[1]}
+              </progress>
+              <p key={ltr[0]}>
+                {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
+              </p>
+            </>
+          ))}
     </div>
   );
 }
