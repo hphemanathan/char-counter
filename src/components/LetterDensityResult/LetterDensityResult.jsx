@@ -1,4 +1,5 @@
 import React from 'react';
+import style from "./LetterDensityResult.module.css"
 
 function LetterDensityResult({chars, charCount, active, isActive}) {
   
@@ -52,24 +53,34 @@ function LetterDensityResult({chars, charCount, active, isActive}) {
       {active
         ? letterDensitySortedArr.map((ltr) => (
             <div key={ltr[0]}>
-              <label htmlFor='char'>{ltr[0]}</label>
-              <progress id='char' value={(ltr[1] / charCount) * 100} max={100}>
-                {ltr[1]}
-              </progress>
-              <p>
-                {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
-              </p>
+              <div className={style.wrapper}>
+                <label htmlFor='char'>{ltr[0]}</label>
+                <progress
+                  id='char'
+                  value={(ltr[1] / charCount) * 100}
+                  max={100}>
+                  {ltr[1]}
+                </progress>
+                <p>
+                  {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
+                </p>
+              </div>
             </div>
           ))
         : letterDensitySortedArr.slice(0, 5).map((ltr) => (
             <>
-              <label htmlFor='char'>{ltr[0]}</label>
-              <progress id='char' value={(ltr[1] / charCount) * 100} max={100}>
-                {ltr[1]}
-              </progress>
-              <p key={ltr[0]}>
-                {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
-              </p>
+              <div className={style.wrapper}>
+                <label htmlFor='char'>{ltr[0]}</label>
+                <progress
+                  id='char'
+                  value={(ltr[1] / charCount) * 100}
+                  max={100}>
+                  {ltr[1]}
+                </progress>
+                <p key={ltr[0]}>
+                  {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
+                </p>
+              </div>
             </>
           ))}
     </div>

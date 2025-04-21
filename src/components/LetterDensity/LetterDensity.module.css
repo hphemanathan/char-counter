@@ -1,6 +1,7 @@
-.wrapper {
-  font-size: var(--font-s-txt-2);
+button {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  column-gap: var(--spacing);
+  /* width: 0%; */
 }

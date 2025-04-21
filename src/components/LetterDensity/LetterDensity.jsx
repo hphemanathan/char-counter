@@ -22,18 +22,16 @@ function LetterDensity({chars, charCount}) {
       ) : (
         <button onClick={() => isActive(!active)}>
           {active ? (
-            <p className={styles.wrapper}>
-              See less{" "}
-              <span>
-                <img src='src/assets/chevron-up-outline.svg' alt='arrow up' />
-              </span>
-            </p>
+            <>
+              <p>See less</p> <ion-icon name='chevron-up-outline'></ion-icon>
+            </>
           ) : (
-            <div className={styles.wrapper}>
-              <p>See more </p>
-              <img src='src/assets/chevron-down-outline.svg' alt='arrow down' />
-          
-            </div>
+            <>
+            <p>
+              See more {" "}
+            </p>
+            <ion-icon name='chevron-down-outline'></ion-icon>
+            </>
           )}
         </button>
       )}

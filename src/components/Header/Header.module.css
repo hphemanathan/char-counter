@@ -2,4 +2,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-block-start: clamp(
+    1rem,
+    0.647887323943662rem + 1.5023474178403755vw,
+    2rem
+  );
+  margin-block-end: clamp(
+    3rem,
+    3.8450704225352115rem + -0.9389671361502347vw,
+    3.625rem
+  );
+}
+
+.button {
+  border-radius: 6px;
+  border: none;
+  background-color: var(--btn-bg);
+  cursor: pointer;
+}
+
+img {
+  padding: var(--spacing);
 }

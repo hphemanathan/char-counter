@@ -4,4 +4,9 @@
   text-align: center;
   line-height: 1;
   letter-spacing: -1px;
+  margin-block-end: clamp(
+    2.5rem,
+    2.323943661971831rem + 0.7511737089201878vw,
+    3rem
+  );
 }

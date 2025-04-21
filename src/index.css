@@ -8,6 +8,9 @@
   --font-s-h1: clamp(1rem, 0.471830985915493rem + 2.253521126760563vw, 2.5rem);
   --font-s-h2: clamp(2.5rem, 1.971830985915493rem + 2.253521126760563vw, 4rem);
   --font-s-txt-2: 20px;
+  --btn-bg: hsl(240, 24%, 96%);
+  --grey-light: hsl(240, 24%, 96%);
+  --grey: hsl(240, 26%, 92%);
 }
 
 [data-theme="dark"] {
