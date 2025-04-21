@@ -3,7 +3,19 @@
   --card-bg-purple: hsl(274, 90%, 80%);
   --card-bg-yellow: hsl(37, 100%, 50%);
   --card-bg-orange: hsl(15, 99%, 67%);
+  --background: hsl(0, 0%, 100%);
+  --font-s-text: 16px;
+  --font-s-h1: clamp(1rem, 0.471830985915493rem + 2.253521126760563vw, 2.5rem);
+}
+
+[data-theme="dark"] {
+  --background: hsl(233, 18%, 9%);
 }
 
 body {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--font-s-text);
 }

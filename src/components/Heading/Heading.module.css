@@ -1,0 +1,7 @@
+.wrapper {
+  font-size: var(--font-s-h1);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: -1px;
+}

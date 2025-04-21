@@ -7,6 +7,8 @@ import TextInput from '../TextInput/TextInput';
 import FilterOptions from '../FilterOptions/FilterOptions';
 import Results from '../Results/Results';
 import LetterDensity from '../LetterDensity/LetterDensity';
+import useLocalStorage from "use-local-storage";
+
 
 function App() {
     const [charCount, setCharCount] = React.useState('')
@@ -17,6 +19,14 @@ function App() {
       const [sentenceCount, setSentenceCount] = React.useState("")
       const [charLimitCheck, setCharLimitCheck] = React.useState(false);
       const [charLimit, setCharLimit] = React.useState("");
+
+      const defaultDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const [theme, setTheme] = useLocalStorage(
+        "theme",
+        defaultDark ? "dark" : "light"
+      );
       // console.log(chars)
   
     // React.useEffect (() =>{
@@ -65,11 +75,25 @@ function App() {
 
  ,[exclude, chars, charsWSpace])
 
+
+ const switchTheme = () => {
+   const newTheme = theme === "light" ? "dark" : "light";
+   
+   setTheme(newTheme);
+   console.log(theme);
+ };
+
+ React.useEffect( () => {
+  if (theme === 'light') {
+    
+  }
+ })
+
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} data-theme={theme}>
         <div className={styles.wrapper}>
-          <Header />
+          <Header theme={theme} switchTheme={switchTheme} />
           <Heading />
           <TextInput
             charsWSpace={charsWSpace}

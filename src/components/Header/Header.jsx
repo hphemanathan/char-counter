@@ -1,11 +1,22 @@
 import React from 'react';
 import styles from "./Header.module.css"
 
-function Header() {
+function Header({switchTheme, theme}) {
   return (
     <div className={styles.wrapper}>
-      <img src='src/assets/logo-light-theme.svg' alt='company logo' />
-      <img src='src/assets/icon-moon.svg' alt='Dark theme toggle' />
+
+      {theme=== 'light' ? 
+      <img src='src/assets/logo-light-theme.svg' alt='company logo light mode' /> :
+      <img src='src/assets/logo-dark-theme.svg' alt='company logo dark mode' />
+      }
+
+      <button onClick={switchTheme}>
+        {theme === "light" ? (
+          <img src='src/assets/icon-moon.svg' alt='Dark theme toggle' />
+        ) : (
+          <img src='src/assets/icon-sun.svg' alt='light theme toggle' />
+        )}
+      </button>
     </div>
   );
 }
