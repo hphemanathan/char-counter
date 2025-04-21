@@ -1,0 +1,6 @@
+.wrapper {
+  font-size: var(--font-s-txt-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

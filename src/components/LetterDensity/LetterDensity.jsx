@@ -1,5 +1,6 @@
 import React from 'react';
 import LetterDensityResult from '../LetterDensityResult/LetterDensityResult';
+import styles from "./LetterDensity.module.css";
 
 
 function LetterDensity({chars, charCount}) {
@@ -21,22 +22,18 @@ function LetterDensity({chars, charCount}) {
       ) : (
         <button onClick={() => isActive(!active)}>
           {active ? (
-            <p>
+            <p className={styles.wrapper}>
               See less{" "}
               <span>
                 <img src='src/assets/chevron-up-outline.svg' alt='arrow up' />
               </span>
             </p>
           ) : (
-            <p>
-              See more{" "}
-              <span>
-                <img
-                  src='src/assets/chevron-down-outline.svg'
-                  alt='arrow down'
-                />
-              </span>
-            </p>
+            <div className={styles.wrapper}>
+              <p>See more </p>
+              <img src='src/assets/chevron-down-outline.svg' alt='arrow down' />
+          
+            </div>
           )}
         </button>
       )}

@@ -4,3 +4,7 @@
   height: 200px;
   padding: calc(var(--spacing) + 12px);
 }
+
+textarea {
+  font-size: var(--font-s-txt-2);
+}
