@@ -3,6 +3,9 @@ button {
   align-items: center;
   justify-content: flex-start;
   column-gap: var(--spacing);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   /* width: 0%; */
 }
 

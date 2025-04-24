@@ -6,8 +6,8 @@ function ExcludeCheckBox({exclude, setExclude}) {
   const id  = React.useId()
   return (
     <div className={styles.wrapper}>
-      <form onSubmit={(event) => event.preventDefault()}>
-        <input
+      <form className={styles.form_wrapper} onSubmit={(event) => event.preventDefault()}>
+        <input className={styles.checkBox} 
           type='checkbox'
           id={id}
           checked={exclude}

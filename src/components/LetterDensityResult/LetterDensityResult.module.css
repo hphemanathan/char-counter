@@ -1,12 +1,14 @@
 .wrapper {
   display: flex;
   /* justify-content: space-between; */
-  align-items: baseline;
+  align-items: center;
+  margin-block-end: var(--spacing);
 }
 
-label {
+.label {
   font-size: var(--font-s-txt-2);
-  /* margin-inline-end: calc(var(--spacing) * 2); */
+  width: 15px;
+  margin-inline-end: calc(var(--spacing) * 2);
 }
 
 progress[value] {
@@ -14,9 +16,15 @@ progress[value] {
   appearance: none;
   height: 12px;
   border-radius: 999px;
-  margin-right: auto;
-  /* width: 80%; */
+
+  flex-grow: 1;
   border: none;
+}
+
+.percentage {
+  margin-left: 16px;
+  width: 98px;
+  text-align: end;
 }
 
 progress[value]::-webkit-progress-bar {

@@ -1,3 +1,12 @@
 .wrapper {
   margin-block-end: calc(var(--spacing) + 4px);
 }
+
+.form_wrapper {
+  display: flex;
+  gap: 0.5em;
+}
+
+.checkBox {
+  accent-color: var(--purple-400);
+}

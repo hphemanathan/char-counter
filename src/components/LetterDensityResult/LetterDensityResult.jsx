@@ -54,16 +54,17 @@ function LetterDensityResult({chars, charCount, active, isActive}) {
         ? letterDensitySortedArr.map((ltr) => (
             <div key={ltr[0]}>
               <div className={style.wrapper}>
-                <div className='label'>
-                  <label htmlFor='char'>{ltr[0]}</label>
-                </div>
+                <label className='label' htmlFor='char'>
+                  {ltr[0]}
+                </label>
+
                 <progress
                   id='char'
                   value={(ltr[1] / charCount) * 100}
                   max={100}>
                   {ltr[1]}
                 </progress>
-                <p>
+                <p className={style.percentage}>
                   {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
                 </p>
               </div>
@@ -72,14 +73,16 @@ function LetterDensityResult({chars, charCount, active, isActive}) {
         : letterDensitySortedArr.slice(0, 5).map((ltr) => (
             <>
               <div className={style.wrapper}>
-                <label htmlFor='char'>{ltr[0]}</label>
+                <label className='label' htmlFor='char'>
+                  {ltr[0]}
+                </label>
                 <progress
                   id='char'
                   value={(ltr[1] / charCount) * 100}
                   max={100}>
                   {ltr[1]}
                 </progress>
-                <p key={ltr[0]}>
+                <p className={style.percentage} key={ltr[0]}>
                   {ltr[1]} ({((ltr[1] / charCount) * 100).toFixed(2)})%
                 </p>
               </div>
