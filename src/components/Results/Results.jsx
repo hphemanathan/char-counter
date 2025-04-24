@@ -1,5 +1,6 @@
 import React from 'react';
 import Result from '../Result/Result';
+import styles from "./Results.module.css"
 
 function Results({chars, charCount, wordCount, exclude, sentenceCount}) {
 
@@ -11,7 +12,7 @@ function Results({chars, charCount, wordCount, exclude, sentenceCount}) {
 
   
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Result type='totalChar'>
         <h2>{charCount}</h2>
         <p>{exclude ? "Total Characters (no space)" : "Total Characters"}</p>

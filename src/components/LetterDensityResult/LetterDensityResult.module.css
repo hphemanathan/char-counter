@@ -1,3 +1,32 @@
 .wrapper {
   display: flex;
+  /* justify-content: space-between; */
+  align-items: baseline;
+}
+
+label {
+  font-size: var(--font-s-txt-2);
+  /* margin-inline-end: calc(var(--spacing) * 2); */
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  border-radius: 999px;
+  margin-right: auto;
+  /* width: 80%; */
+  border: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: var(--grey-light);
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: var(--purple-400);
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: var(--purple-400);
 }

@@ -1,0 +1,3 @@
+.wrapper {
+  margin-block-end: calc(var(--spacing) + 4px);
+}

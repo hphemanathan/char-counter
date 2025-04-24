@@ -11,6 +11,9 @@
   --btn-bg: hsl(240, 24%, 96%);
   --grey-light: hsl(240, 24%, 96%);
   --grey: hsl(240, 26%, 92%);
+  --radius-12: 12px;
+  --text-preset-2: 24px;
+  --purple-400: hsl(274, 90%, 80%);
 }
 
 [data-theme="dark"] {

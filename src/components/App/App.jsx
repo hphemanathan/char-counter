@@ -122,6 +122,7 @@ function App() {
             setCharLimit={setCharLimit}
             charLimitCheck={charLimitCheck}
             setCharLimitCheck={setCharLimitCheck}
+            wordCount={wordCount}
           />
           <Results
             wordCount={wordCount}

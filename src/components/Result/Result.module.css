@@ -2,7 +2,14 @@
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 130px;
+  /* height: 130px; */
+  border-radius: var(--radius-12);
+  padding: calc(var(--spacing) * 3);
+  padding-inline-start: calc(var(--spacing) + 4px);
+  padding-block-end: calc(var(--spacing) * 4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h2 {

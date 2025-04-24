@@ -5,3 +5,8 @@ button {
   column-gap: var(--spacing);
   /* width: 0%; */
 }
+
+h3 {
+  font-size: var(--text-preset-2);
+  margin-block-end: calc(var(--spacing) * 3);
+}

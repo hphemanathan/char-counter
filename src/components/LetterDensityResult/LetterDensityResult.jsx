@@ -54,7 +54,9 @@ function LetterDensityResult({chars, charCount, active, isActive}) {
         ? letterDensitySortedArr.map((ltr) => (
             <div key={ltr[0]}>
               <div className={style.wrapper}>
-                <label htmlFor='char'>{ltr[0]}</label>
+                <div className='label'>
+                  <label htmlFor='char'>{ltr[0]}</label>
+                </div>
                 <progress
                   id='char'
                   value={(ltr[1] / charCount) * 100}

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SetCharacterLimit.module.css'
 
 function SetCharLimit({chars, charLimit, setCharLimit, charLimitCheck, setCharLimitCheck}) {
   // const [charLimitCheck, setCharLimitCheck] = React.useState(false);
@@ -11,7 +12,7 @@ function SetCharLimit({chars, charLimit, setCharLimit, charLimitCheck, setCharLi
     //   }
     // })
   return (
-    <div>
+    <div className={styles.wrapper}>
       <form onSubmit={(event) => event.preventDefault()}>
         <input
           type='checkbox'

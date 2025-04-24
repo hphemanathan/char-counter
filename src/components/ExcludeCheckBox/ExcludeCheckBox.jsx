@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from "./ExcludeCheckBox.module.css"
 
 function ExcludeCheckBox({exclude, setExclude}) {
   
   const id  = React.useId()
   return (
-    <div>
+    <div className={styles.wrapper}>
       <form onSubmit={(event) => event.preventDefault()}>
         <input
           type='checkbox'
